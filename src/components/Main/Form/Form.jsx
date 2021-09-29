@@ -1,4 +1,4 @@
-import React, { useState} from  'react';
+import React, { useState,  useContext,} from  'react';
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 import formatDate from '../../../utils/formatDate';
@@ -11,10 +11,19 @@ const initialState = {
   date: formatDate(new Date()),
 };
 
-const [formData, setFormData] = useState(initialState);
 
-const createTransaction = () => {
+
+const NewTransactionForm = () => {
     const classes = useStyles();
+    const { addTransaction } = useContext(ExpenseTrackerContext);
+    const [formData, setFormData] = useState(initialState);
+
+    const createTransaction = () => {
+        
+        addTransaction({ ...formData, amount: Number(formData.amount), id: uuidv4() });
+        setFormData(initialState);
+      };
+
 
     return (
         <Grid container spacing={2}>
@@ -49,7 +58,7 @@ const createTransaction = () => {
           <Grid item xs={6}>
             <TextField fullWidth label="Date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
           </Grid>
-          <Button className={classes.button} variant="outlined" color="primary" fullWidth onClick= "">Create</Button>
+          <Button className={classes.button} variant="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
         </Grid>
       );
 
