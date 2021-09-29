@@ -1,20 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, {  useRef } from 'react';
 import { Grid } from '@material-ui/core';
-import { Details, Main  } from './components';
-import { SpeechState, useSpeechContext } from "@speechly/react-client";
-import { PushToTalkButton, PushToTalkButtonContainer , ErrorPanel} from '@speechly/react-ui';
+import Details from './components/Details/Details';
+import Main from './components/Main/Main';
+// import { SpeechState, useSpeechContext } from "@speechly/react-client";
+// import { PushToTalkButton, PushToTalkButtonContainer , ErrorPanel} from '@speechly/react-ui';
 import useStyles from './styles';
 
 const App = () => {
     const classes = useStyles();
-    const { speechState } = useSpeechContext();
+    // const { speechState } = useSpeechContext();
     const main = useRef(null);
-    const executeScroll = () => main.current.scrollIntoView() ;
-    useEffect(() => {
-        if (speechState === SpeechState.Recording) {
-          executeScroll();
-        }
-      }, [speechState]);
+    // const executeScroll = () => main.current.scrollIntoView() ;
+    // useEffect(() => {
+    //     if (speechState === SpeechState.Recording) {
+    //       executeScroll();
+    //     }
+    //   }, [speechState]);
 
     return (
         <div>
@@ -34,10 +35,10 @@ const App = () => {
           <Details title="Expense" />
         </Grid>
 
-        <PushToTalkButtonContainer>
+        {/* <PushToTalkButtonContainer>
           <PushToTalkButton />
           <ErrorPanel/>
-        </PushToTalkButtonContainer>
+        </PushToTalkButtonContainer> */}
 
         </Grid>
 
