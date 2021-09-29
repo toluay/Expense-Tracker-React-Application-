@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Grid } from '@material-ui/core';
 import { Details, Main  } from './components';
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
-import { PushToTalkButton, PushToTalkButtonContainer } from '@speechly/react-ui';
+import { PushToTalkButton, PushToTalkButtonContainer , ErrorPanel} from '@speechly/react-ui';
 
 const App = () => {
     const classes = useStyles();
@@ -35,8 +35,9 @@ const App = () => {
 
         <PushToTalkButtonContainer>
           <PushToTalkButton />
+          <ErrorPanel/>
         </PushToTalkButtonContainer>
-        
+
         </Grid>
 
     </div>
