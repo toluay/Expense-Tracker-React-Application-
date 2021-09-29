@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from '@material-ui/core';
 import useStyles from './styles';
+import Form from './Form/Form';
 
 const ExpenseTracker = () => {
     const classes = useStyles();
@@ -14,7 +15,8 @@ const ExpenseTracker = () => {
               {/* <InfoCard /> */} infocard gets here 
             </Typography>
             <Divider className={classes.divider} />
-            {/* <Form /> */} form component gets here 
+            {/* form component gets here  */}
+             <Form />
           </CardContent>
           <CardContent className={classes.cartContent}>
             <Grid container spacing={2}>
