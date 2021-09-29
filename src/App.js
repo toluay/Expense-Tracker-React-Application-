@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Grid } from '@material-ui/core';
-import { Details} from './components';
+import { Details, Main  } from './components';
 
 const App = () => {
     const classes = useStyles();
@@ -12,8 +12,9 @@ const App = () => {
           <Details title="Income" />
         </Grid>
         <Grid ref={main} item xs={12} sm={3} className={classes.main}>
-          {/* <Main /> */}
-          main component here 
+        
+          {/* main component here  */}
+            <Main />
         </Grid>
         <Grid item xs={12} sm={4} className={classes.desktop}>
           <Details title="Income" />
