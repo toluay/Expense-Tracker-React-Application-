@@ -6,7 +6,7 @@ import Snackbar from '../../Snackbar/Snackbar';
 import { useSpeechContext } from '@speechly/react-client';
 
 import formatDate from '../../../utils/formatDate';
-const { segment } = useSpeechContext();
+
 import { ExpenseTrackerContext } from '../../../context/context';
 import { incomeCategories, expenseCategories } from '../../../constants/categories';
 import useStyles from './styles';
