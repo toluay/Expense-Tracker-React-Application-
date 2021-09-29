@@ -3,6 +3,7 @@ import { Grid } from '@material-ui/core';
 import { Details, Main  } from './components';
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
 import { PushToTalkButton, PushToTalkButtonContainer , ErrorPanel} from '@speechly/react-ui';
+import useStyles from './styles';
 
 const App = () => {
     const classes = useStyles();
